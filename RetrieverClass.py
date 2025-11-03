@@ -6,7 +6,7 @@ import logging
 import pandas as pd
 logging.basicConfig(level=logging.INFO)
 import os
-api_key = os.getenv("ALIYUN_API_KEY")
+api_key = "sk-dfb5d9295ee94adeafc438d18c7d4900"
 
 class Retriever:
     def __init__(self, file_path, db_path="./chroma_db", chunk_size=1000, overlap=200, segment_size=200):
@@ -182,7 +182,8 @@ if __name__ == "__main__":
     retriever = Retriever("./中华人民共和国刑法_20201226.docx")
     # retriever.split()
     # retriever.get_embedding()
-    print("result:\n", retriever.query("把你妈杀了"))
+    df = retriever.query("把你妈杀了")
+    print(type(df.to_markdown(index=False)))
     # data = retriever.collection.get(
     #     where={"type": "segment"},
     #     include=["documents", "metadatas"],   # 如需向量再加 "embeddings"
