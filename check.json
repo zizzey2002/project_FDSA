@@ -1,10 +1,32 @@
-content='你好！有什么我可以帮你的吗？' additional_kwargs={'refusal': None} 
-response_metadata={'token_usage': {'completion_tokens': 8, 'prompt_tokens': 238, 'total_tokens': 246, 'completion_tokens_details': None, 'prompt_tokens_details': {'audio_tokens': None, 'cached_tokens': 0}}, 'model_provider': 'openai', 'model_name': 'qwen3-max', 'system_fingerprint': None, 'id': 'chatcmpl-abf95e08-05aa-41be-a02a-5449c32c416e', 'finish_reason': 'stop', 'logprobs': None} 
-id='lc_run--348ab694-62df-40d3-8ce1-22939bc84702-0' 
-content='' additional_kwargs={'refusal': None} 
-
-response_metadata={'token_usage': {'completion_tokens': 15, 'prompt_tokens': 258, 'total_tokens': 273, 'completion_tokens_details': None, 'prompt_tokens_details': {'audio_tokens': None, 'cached_tokens': 0}}, 'model_provider': 'openai', 'model_name': 'qwen3-max', 'system_fingerprint': None, 'id': 'chatcmpl-34f77892-48ef-4b16-ad60-0b60d2fa9c2a', 'finish_reason': 'tool_calls', 'logprobs': None} 
-id='lc_run--03aab9f0-954a-4642-a7ca-d3cccafe6f4f-0' 
-
-usage_metadata={'input_tokens': 238, 'output_tokens': 8, 'total_tokens': 246, 'input_token_details': {'cache_read': 0}, 'output_token_details': {}}
-tool_calls=[{'name': 'get_current_time', 'args': {}, 'id': 'call_8797bd1cb8ff4412ae3c73f4', 'type': 'tool_call'}] usage_metadata={'input_tokens': 258, 'output_tokens': 15, 'total_tokens': 273, 'input_token_details': {'cache_read': 0}, 'output_token_details': {}}
+[
+  {
+    "name": "query_law",
+    "title": null,
+    "description": "按问题检索并返回匹配条文（Markdown）",
+    "inputSchema": {
+      "properties": {
+        "question": {
+          "title": "Question",
+          "type": "string"
+        }
+      },
+      "required": ["question"],
+      "title": "query_lawArguments",
+      "type": "object"
+    },
+    "outputSchema": {
+      "properties": {
+        "result": {
+          "title": "Result",
+          "type": "string"
+        }
+      },
+      "required": ["result"],
+      "title": "query_lawOutput",
+      "type": "object"
+    },
+    "icons": null,
+    "annotations": null,
+    "meta": null
+  }
+]
